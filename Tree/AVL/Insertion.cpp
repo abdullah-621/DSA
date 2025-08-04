@@ -51,6 +51,7 @@ Node *rightRotation(Node *root)
 
   root->height = 1 + max(getheight(root->left), getheight(root->right));
   child->height = 1 + max(getheight(child->left), getheight(child->right));
+
   return child;
 }
 // left rotation
@@ -60,6 +61,7 @@ Node *leftRotation(Node *root)
   Node *leftChild = child->left;
   child->left = root;
   root->right = leftChild;
+
   root->height = 1 + max(getheight(root->left), getheight(root->right));
   child->height = 1 + max(getheight(child->left), getheight(child->right));
   return child;
@@ -74,6 +76,7 @@ Node *Insertion(Node *root, int key)
     return new Node(key);
   }
   // root exist
+  // cout << "Inserting " << key << " at node: " << (root ? root->data : -1) << endl;
 
   if (key > root->data)
     root->right = Insertion(root->right, key);
@@ -90,6 +93,7 @@ Node *Insertion(Node *root, int key)
 
   // update height
   root->height = 1 + max(getheight(root->left), getheight(root->right));
+  // cout << root->height << endl;
 
   // check balanc factor
   int balance = getBalance(root);
@@ -128,10 +132,33 @@ void Inorder(Node *root)
   {
     return;
   }
-  
+
   Inorder(root->left);
   cout << root->data << " ";
   Inorder(root->right);
+}
+
+void search(Node *root, int key)
+{
+  if (root == nullptr)
+  {
+    cout << "Not Found" << endl;
+    return;
+  }
+  if (key == root->data)
+  {
+    cout << "Found it" << endl;
+    return;
+  }
+
+  if (key < root->data)
+  {
+    search(root->left, key);
+  }
+  else
+  {
+    search(root->right, key);
+  }
 }
 
 int main()
@@ -145,6 +172,8 @@ int main()
   root = Insertion(root, 45);
 
   Inorder(root);
+  cout << endl;
+  search(root, 808);
 
   return 0;
 }
