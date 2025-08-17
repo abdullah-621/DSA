@@ -1,0 +1,7 @@
+Give an array and we creat a heap (min / max) into hole array then time complxity is => O(n)
+
+And when creat 1 by 1 element time complixity 
+=> O(nlogn)
+
+
+Deletation => O(logn)
