@@ -1,7 +1,28 @@
-Give an array and we creat a heap (min / max) into hole array then time complxity is => O(n)
+Give an array and we creat a heap (min / max) into hole array then time complxity is => O(n) ( step Down method)
 
-And when creat 1 by 1 element time complixity 
-=> O(nlogn)
+And when creat 1 by 1 element time complixity  => O(nlogn)
 
 
 Deletation => O(logn)
+
+
+
+
+1. Element গুলো একে একে push করলে
+
+	প্রতিবার push করতে গেলে heap property maintain করতে হয় → O(log n) প্রতি element।
+
+	n টা element push করলে → O(n log n) total time লাগবে।
+
+
+
+2. Vector দিয়ে একবারে initialize করলে
+	vector<int> v = {3, 1, 4, 1, 5, 9};
+	priority_queue<int> pq(v.begin(), v.end());
+
+
+এক্ষেত্রে ভেতরে make_heap ফাংশন ব্যবহার হয়।
+
+make_heap এর time complexity হলো O(n)।
+
+তাই পুরো priority_queue build করতে O(n) সময় লাগে।
