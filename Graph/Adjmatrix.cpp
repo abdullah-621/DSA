@@ -8,6 +8,9 @@ using namespace std;
 // Directed Unweighted graph
 // Directed weighted graph
 
+// time complixity = O(v*v)
+// space complixity = O(v*v)
+
 int main()
 {
   int vertex, edge;
