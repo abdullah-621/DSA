@@ -1,0 +1,4 @@
+sliding windows 2 types
+
+1 - fixed size
+2 - variable size
