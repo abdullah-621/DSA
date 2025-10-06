@@ -3,10 +3,6 @@ using namespace std;
 
 void devide_sort(int arr[], int first, int last)
 {
-
-  
-  
-
   int mid = (first + last) / 2;
   cout << arr[mid];
 }
