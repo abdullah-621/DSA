@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+// time complixity O(nlogn)
+// space complixity O(n)
+
 void merge(int arr[], int start, int mid, int end)
 {
   vector<int> temp(end - start + 1);
